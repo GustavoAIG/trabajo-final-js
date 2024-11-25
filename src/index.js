@@ -1,6 +1,9 @@
-import app from './app.js';
-import { connectDB } from './db.js'
+import { server } from './app.js';  // Importa el servidor desde app.js
+import { connectDB } from './db.js';
 
 connectDB();
-app.listen(4000)
-console.log('Server on port', 4000);
+
+// Escucha en el puerto 4000
+server.listen(4000, () => {
+    console.log('Server on port', 4000);
+});

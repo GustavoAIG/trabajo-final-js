@@ -4,6 +4,7 @@ import {AuthProvider} from './context/AuthContext';
 import RegisterPage from './pages/RegisterPage';
 import LogInPage from './pages/LogInPage';
 import ProtectedRoute from './ProtectedRoute';
+import HomePage from './pages/HomePage';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path='/register' element={<RegisterPage />}/>
 
           <Route element={<ProtectedRoute/>}>
-            <Route path='/tasks' element={<h1>Tasks</h1>}/>
+            <Route path='/home' element={<HomePage />}/>
           </Route>
         </Routes>
       </BrowserRouter>
