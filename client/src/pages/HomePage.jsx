@@ -1,4 +1,3 @@
-
 import { Box } from '@mui/material';
 import Navbar from '../components/NavBar';
 import Slider from '../components/Slider';
@@ -9,33 +8,37 @@ import Forum from '../components/Forum';
 const HomePage = () => {
   return (
     <Box>
-      {/* Navbar (si lo tienes) */}
+      {/* Navbar */}
       <Navbar />
 
+      {/* Contenido principal con espaciado */}
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 3 }}>
+        {/* Slider Section */}
+        <Box>
+          <Slider />
+        </Box>
 
-      {/* Slider Section */}
-      <Box>
-        <Slider />
-      </Box>
+        {/* Gallery Section */}
+        <Box>
+          <Gallery />
+        </Box>
 
-      {/* Gallery Section */}
-      <Box>
-        <Gallery />
-      </Box>
+        
+        {/* Contact Form Section */}
+        <Box>
+          
+          <ContactForm />
+        </Box>
 
-      {/* Contact Form Section */}
-      <Box>
-        <ContactForm />
-      </Box>
-
-      {/* Forum Section */}
-      <Box>
-        <Forum />
+        {/* Forum Section */}
+        <Box>
+          <Forum />
+        </Box>
       </Box>
 
       {/* Footer */}
-      <Box>
-        <p>Inga Tello, Gustavo Alonso | Trabajo Final - Inteligencia Artificial</p>
+      <Box >
+          Inga Tello, Gustavo Alonso - Torres Urbina Jared Guillermo| Trabajo Final - Inteligencia Artificial
       </Box>
     </Box>
   );

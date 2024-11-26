@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+forum-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 90%;
+  padding: 10px;
+  background: #1e1e2f;
+  border: 2px solid #2f2f3f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+  text-align: center; /* Centra el contenido textual */
+  
+}
+
+
+
+.forum-title {
+  color: #0ff;
+  font-size: 2rem;
+  margin-bottom: 40px; /* Incrementar para más espacio */
+  text-align: center;
+}
+
+.comment-form {
+  display: flex; /* Asegura que los elementos del formulario se alineen fácilmente */
+  flex-direction: column; /* Coloca el área de texto y el botón en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente dentro del espacio disponible */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor principal */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+.comment-input {
+  width: 80%;
+  max-width: 600px;
+  padding: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #0ff;
+  background: #0a0a1f;
+  border: 2px solid #0ff;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+}
+
+.comment-input:focus {
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
+}
+
+.comment-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(45deg, #0ff, #00aaff);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.comment-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px #00aaff inset, 0 0 20px #0ff;
+}
+
+.comment-button:hover {
+  box-shadow: 0 0 20px #0ff, 0 0 30px #00aaff;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #101020;
+  border: 1px solid #0ff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.comment-timestamp {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.comment-text {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #fff;
+}

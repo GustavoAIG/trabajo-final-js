@@ -11,13 +11,11 @@ const ContactForm = () => {
 
   const [errors, setErrors] = useState({});
 
-  // Manejar cambios en los campos
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Validar campos
   const validate = () => {
     let tempErrors = {};
     if (!formData.name) tempErrors.name = "El nombre es obligatorio.";
@@ -30,7 +28,6 @@ const ContactForm = () => {
     return Object.keys(tempErrors).length === 0;
   };
 
-  // Manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
@@ -50,11 +47,27 @@ const ContactForm = () => {
   };
 
   return (
+    <div className="forum-container">
+      <h2 className="forum-title">Formulario de Contactos</h2>
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{ display: "flex", flexDirection: "column", gap: 2, maxWidth: 400 }}
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "35vh",
+        width: "500px",
+        flexDirection: "column",
+        gap: 2,
+        maxWidth: 400,
+        color: "#A9A9A9", // Color metálico
+        fontFamily: "'Orbitron', sans-serif", // Aplica Orbitron al contenedor general
+        padding: "0 10px",
+        margin: "auto",
+      }}
     >
+      
       <TextField
         label="Nombre"
         name="name"
@@ -63,6 +76,15 @@ const ContactForm = () => {
         error={!!errors.name}
         helperText={errors.name}
         fullWidth
+        InputProps={{
+          style: { color: "#A9A9A9", fontFamily: "'Orbitron', sans-serif" },
+        }}
+        InputLabelProps={{
+          style: { color: "#A9A9A9", fontFamily: "'Orbitron', sans-serif" },
+        }}
+        FormHelperTextProps={{
+          style: { color: "#FF6F61", fontFamily: "'Orbitron', sans-serif" },
+        }}
       />
       <TextField
         label="Correo Electrónico"
@@ -73,6 +95,15 @@ const ContactForm = () => {
         error={!!errors.email}
         helperText={errors.email}
         fullWidth
+        InputProps={{
+          style: { color: "#A9A9A9", fontFamily: "'Orbitron', sans-serif" },
+        }}
+        InputLabelProps={{
+          style: { color: "#A9A9A9", fontFamily: "'Orbitron', sans-serif" },
+        }}
+        FormHelperTextProps={{
+          style: { color: "#FF6F61", fontFamily: "'Orbitron', sans-serif" },
+        }}
       />
       <TextField
         label="Mensaje"
@@ -84,11 +115,40 @@ const ContactForm = () => {
         multiline
         rows={4}
         fullWidth
+        InputProps={{
+          style: { color: "#A9A9A9", fontFamily: "'Orbitron', sans-serif" },
+        }}
+        InputLabelProps={{
+          style: { color: "#A9A9A9", fontFamily: "'Orbitron', sans-serif" },
+        }}
+        FormHelperTextProps={{
+          style: { color: "#FF6F61", fontFamily: "'Orbitron', sans-serif" },
+        }}
       />
-      <Button type="submit" variant="contained" color="primary">
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{
+          color: "white", // Cambia el color del texto a blanco
+          backgroundColor: "#333333", // Fondo oscuro del botón
+          fontFamily: "'Orbitron', sans-serif", // Aplica Orbitron al botón
+          border: "2px solid #A9A9A9", // Borde gris metálico
+          ":hover": {
+            backgroundColor: "#555555", // Fondo al pasar el puntero
+            boxShadow: "0 0 10px 5px rgba(255, 255, 255, 0.5)", // Efecto de resplandor (hover)
+          },
+          ":active": {
+            backgroundColor: "#222222", // Fondo al presionar el botón
+            boxShadow: "0 0 15px 5px rgba(255, 255, 255, 0.8)", // Resplandor más fuerte al presionar
+            transform: "scale(0.98)", // Efecto de reducción al presionar
+          },
+        }}
+      >
         Enviar
       </Button>
     </Box>
+    </div>
   );
 };
 

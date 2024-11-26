@@ -41,6 +41,11 @@
   color: #888;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @import "swiper/swiper-bundle.min.css";
 @import "swiper/css/navigation";
 @import "swiper/css/pagination";

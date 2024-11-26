@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
+import '../styles/forum.css'; // Archivo CSS para estilos
 
-// Establecer conexión con el servidor WebSocket
 const socket = io('http://localhost:4000');
 
 const Forum = () => {
@@ -9,18 +9,15 @@ const Forum = () => {
   const [newComment, setNewComment] = useState('');
 
   useEffect(() => {
-    // Escuchar los comentarios nuevos
     socket.on('new-comment', (commentData) => {
       setComments((prevComments) => [...prevComments, commentData]);
     });
 
     return () => {
-      // Limpiar el socket cuando el componente se desmonte
       socket.off('new-comment');
     };
   }, []);
 
-  // Enviar un nuevo comentario
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (newComment.trim()) {
@@ -28,36 +25,35 @@ const Forum = () => {
         text: newComment,
         timestamp: new Date().toLocaleString(),
       };
-
-      // Emitir el nuevo comentario al servidor
       socket.emit('new-comment', commentData);
-
-      setNewComment(''); // Limpiar el campo del comentario
+      setNewComment('');
     }
   };
 
   return (
-    <div>
-      <h2>Foro de Comentarios</h2>
+    <div className="forum-container">
+      <h2 className="forum-title">Foro de Comentarios</h2>
 
-      {/* Formulario de nuevo comentario */}
-      <form onSubmit={handleCommentSubmit}>
+      <form onSubmit={handleCommentSubmit} className="comment-form">
+        
         <textarea
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           placeholder="Escribe un comentario..."
           rows="4"
           cols="50"
+          className="comment-input"
         ></textarea>
-        <button type="submit">Comentar</button>
+        <button type="submit" className="comment-button">
+          Comentar
+        </button>
       </form>
 
-      {/* Mostrar los comentarios */}
-      <div>
+      <div className="comments-section">
         {comments.map((comment, index) => (
-          <div key={index}>
-            <p><strong>{comment.timestamp}</strong></p>
-            <p>{comment.text}</p>
+          <div key={index} className="comment">
+            <p className="comment-timestamp">{comment.timestamp}</p>
+            <p className="comment-text">{comment.text}</p>
           </div>
         ))}
       </div>
