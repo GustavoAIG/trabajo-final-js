@@ -17,10 +17,15 @@ const modalStyle = {
 const Gallery = () => {
   // Lista de imágenes con las URL correspondientes
   const images = [
-    { id: 1, src: "https://img.freepik.com/foto-gratis/escena-estilo-vida-al-estilo-anime-persona-haciendo-tareas-diarias_23-2151002612.jpg?t=st=1732632939~exp=1732636539~hmac=c35cff9b8da94c8d62825ac1d50898cc3b7e0d44df7a91a5611ef3a0c9231be2&w=1380", alt: "Image 1", url: "https://www.ibm.com/mx-es/topics/artificial-intelligence" },
-    { id: 2, src: "https://img.freepik.com/foto-gratis/retrato-animales-cerca_23-2150532675.jpg?t=st=1732632972~exp=1732636572~hmac=0a1f58872b01ac9504e38450147a6acafa901cb326c90af946a9b6f9b683e349&w=740", alt: "Image 2", url: "https://www.microsoft.com/es-es/ai" },
-    { id: 3, src: "https://img.freepik.com/foto-gratis/guerrero-cyberpunk-paisaje-urbano_23-2150712506.jpg?t=st=1732632991~exp=1732636591~hmac=d129b9063d735add1c100aac61a88ee9a5423d26ba4501ff574e82f96634031c&w=740", alt: "Image 3", url: "https://azure.microsoft.com/es-mx/solutions/ai" },
-    { id: 4, src: "https://img.freepik.com/foto-gratis/estilo-arte-digital-leones_23-2150977823.jpg?t=st=1732633130~exp=1732636730~hmac=39f0184f31fbc270341447b34e6a277663b413de33c183642ecd6c8796a7f907&w=740", alt: "Image 4", url: "https://gestion.pe/peru/uni-contara-con-carrera-ingenieria-de-inteligencia-artificial-desde-cuando-noticia/" },
+    { id: 1, src: "https://img.freepik.com/foto-gratis/equipo-uso-ninja-tiro-completo_23-2150961062.jpg?t=st=1732741663~exp=1732745263~hmac=0ae5b694659523d73eed0e83b96fbc8dce81bf60a8d83b72050451e4f5ced4b7&w=740", alt: "Image 1" },
+    { id: 2, src: "https://img.freepik.com/foto-gratis/retrato-animales-cerca_23-2150532675.jpg?t=st=1732632972~exp=1732636572~hmac=0a1f58872b01ac9504e38450147a6acafa901cb326c90af946a9b6f9b683e349&w=740", alt: "Image 2" },
+    { id: 3, src: "https://img.freepik.com/foto-gratis/guerrero-cyberpunk-paisaje-urbano_23-2150712506.jpg?t=st=1732632991~exp=1732636591~hmac=d129b9063d735add1c100aac61a88ee9a5423d26ba4501ff574e82f96634031c&w=740", alt: "Image 3" },
+    { id: 4, src: "https://img.freepik.com/foto-gratis/estilo-arte-digital-leones_23-2150977823.jpg?t=st=1732633130~exp=1732636730~hmac=39f0184f31fbc270341447b34e6a277663b413de33c183642ecd6c8796a7f907&w=740", alt: "Image 4" },
+    { id: 5, src: "https://img.freepik.com/foto-gratis/modelo-dibujos-animados-viviendas-propiedades-residenciales_23-2151024247.jpg?t=st=1732741424~exp=1732745024~hmac=3d91c4c25c8ddcc62956258ead84c555d8147afa83319686529b4989e2052f5b&w=740" },
+    { id: 6, src: "https://img.freepik.com/fotos-premium/toma-escenica-montanas-alpes-creada-ia-generativa_762026-13321.jpg?w=740" },
+    { id: 7, src: "https://img.freepik.com/foto-gratis/persona-deprimida-cuarto-oscuro_23-2150761396.jpg?t=st=1732741596~exp=1732745196~hmac=674dcb746df26c89cd1c2c27c47942041e2c442633f93c6cf4821e7a7c225a6b&w=740" },
+    { id: 8, src: "https://img.freepik.com/foto-gratis/retrato-persona-taxi-amarillo-ciudad-nueva-york_23-2150819952.jpg?t=st=1732741636~exp=1732745236~hmac=5440d702580c2c5f7e56c8461b386e6e0fa74abe4dd0daedacd789e52f0f8621&w=740" },
+
   ];
 
   // Estado para abrir el modal
@@ -49,7 +54,7 @@ const Gallery = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                style={{ width: "100%", cursor: "pointer", height: "100%" }}
+                style={{ width: "100%", cursor: "pointer", height: "600px" }}
                 onClick={() => handleOpen(image)}
               />
               {/* URL debajo de la imagen */}

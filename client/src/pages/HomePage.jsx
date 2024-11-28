@@ -4,6 +4,7 @@ import Slider from '../components/Slider';
 import Gallery from '../components/Gallery';
 import ContactForm from '../components/ContactForm';
 import Forum from '../components/Forum';
+import WelcomeSection from '../components/Welcome';
 
 const HomePage = () => {
   return (
@@ -13,25 +14,28 @@ const HomePage = () => {
 
       {/* Contenido principal con espaciado */}
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 3 }}>
-        {/* Slider Section */}
         <Box>
+          <WelcomeSection />
+        </Box>
+        {/* Slider Section */}
+        <Box id="slider">
           <Slider />
         </Box>
 
         {/* Gallery Section */}
-        <Box>
+        <Box id="gallery">
           <Gallery />
         </Box>
 
         
         {/* Contact Form Section */}
-        <Box>
+        <Box id="form">
           
           <ContactForm />
         </Box>
 
         {/* Forum Section */}
-        <Box>
+        <Box id="forum">
           <Forum />
         </Box>
       </Box>
