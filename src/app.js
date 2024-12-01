@@ -14,7 +14,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173', // Permite solicitudes desde el frontend
+    origin: 'https://front-js.netlify.app/', // Permite solicitudes desde el frontend
     methods: ['GET', 'POST'], // Métodos permitidos
     credentials: true, // Permite las cookies
   },
@@ -22,7 +22,7 @@ const io = new Server(server, {
 
 // Configuración de CORS para Express
 app.use(cors({
-  origin: 'http://localhost:5173', // Permite el acceso desde el frontend
+  origin: 'https://front-js.netlify.app/', // Permite el acceso desde el frontend
   credentials: true, // Permite enviar cookies
 }));
 
