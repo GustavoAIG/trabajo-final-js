@@ -6,7 +6,6 @@ import http from 'http'; // Usamos http para crear el servidor HTTP
 import { Server } from 'socket.io'; // Usamos el servidor de socket.io
 
 import authRoutes from './routes/auth.routes.js';
-import taskRoutes from './routes/task.routes.js';
 
 const app = express();
 
@@ -32,7 +31,6 @@ app.use(cookieParser());
 
 // Rutas de la API
 app.use('/api', authRoutes);
-app.use('/api', taskRoutes);
 
 // Configuración de WebSocket
 io.on('connection', (socket) => {

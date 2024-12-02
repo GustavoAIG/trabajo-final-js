@@ -52,7 +52,6 @@ export const login = async (req, res) => {
         res.json({
             id: userFound._id,
             username: userFound.username,
-            password: userFound.email,
             createAt: userFound.createdAt,
             updateAt: userFound.updatedAt
         });

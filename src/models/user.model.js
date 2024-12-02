@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -10,7 +11,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true
+        unique: true,
+        match: [/^\S+@\S+\.\S+$/, 'Por favor ingrese un correo electrónico válido.'],
+        index: true
     },
     password: {
         type: String,
@@ -18,6 +21,13 @@ const userSchema = new mongoose.Schema({
     } 
 }, {
     timestamps: true
-})
+});
 
-export default mongoose.model('User', userSchema)
+// Hook para cifrar la contraseña antes de guardarla
+userSchema.pre('save', async function(next) {
+    if (!this.isModified('password')) return next();
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+});
+
+export default mongoose.model('User', userSchema);
