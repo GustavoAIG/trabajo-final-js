@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
 export { server, io };
 
 // Configuración para que el servidor escuche en el puerto especificado
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
