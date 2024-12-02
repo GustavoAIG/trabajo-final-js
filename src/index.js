@@ -5,9 +5,7 @@ import { connectDB } from './db.js';
 // Cargar las variables de entorno desde el archivo .env
 dotenv.config();
 
-connectDB();
+connectDB(); // Conectar a la base de datos
 
-// Escucha en el puerto 4000
-server.listen(4000, () => {
-  console.log('Server on port 4000');
-});
+// No necesitas llamar a server.listen() aquí, ya está en app.js
+// La configuración de escucha ya se maneja en app.js
