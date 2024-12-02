@@ -11,9 +11,11 @@ const app = express();
 
 // Crear servidor HTTP con WebSocket
 const server = http.createServer(app);
+
+// Configuración de CORS para WebSocket
 const io = new Server(server, {
   cors: {
-    origin: 'https://front-js.netlify.app/', // Permite solicitudes desde el frontend
+    origin: 'https://front-js.netlify.app', // Permite solicitudes desde el frontend
     methods: ['GET', 'POST'], // Métodos permitidos
     credentials: true, // Permite las cookies
   },
@@ -21,7 +23,7 @@ const io = new Server(server, {
 
 // Configuración de CORS para Express
 app.use(cors({
-  origin: 'https://front-js.netlify.app/', // Permite el acceso desde el frontend
+  origin: 'https://front-js.netlify.app', // Permite el acceso desde el frontend
   credentials: true, // Permite enviar cookies
 }));
 
@@ -49,3 +51,9 @@ io.on('connection', (socket) => {
 
 // Exportar el servidor para usarlo en otros archivos
 export { server, io };
+
+// Configuración para que el servidor escuche en el puerto especificado
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
+});
