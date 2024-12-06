@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import '../styles/forum.css'; // Archivo CSS para estilos
 
-const socket = io('http://localhost:4000');
+const socket = io('https://backend-mongo-in5c.onrender.com/');
 
 const Forum = () => {
   const [comments, setComments] = useState([]);
